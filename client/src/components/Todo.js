@@ -8,14 +8,14 @@ const Todo = ({data, setTodolist}) => {
   const [topic, setTopic] = useState(data)
 
   const onDeleteHandler = async (id) => {
-    await axios.delete(`http://localhost:3000/posts/${id}`)
+    await axios.delete(`http://13.209.40.215/posts/${id}`)
     setTodolist((prev) => 
       prev.filter(e => e.id !== id)
     )
   }
 
   const onChangeCheckbox = async (e) => {
-    await axios.patch(`http://localhost:3000/posts/${data.id}`, {
+    await axios.patch(`http://13.209.40.215/posts/${data.id}`, {
       isDone: e.target.checked
     })
   }

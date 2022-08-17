@@ -10,7 +10,7 @@ const Change = ({data, setMode, setTopic}) => {
   }
 
   const onTodoChangeHandler = async () => {
-    await axios.patch(`http://localhost:3000/posts/${data.id}`, {
+    await axios.patch(`http://13.209.40.215/posts/${data.id}`, {
       title: value
     })
 

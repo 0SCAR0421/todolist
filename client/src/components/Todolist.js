@@ -9,7 +9,7 @@ const Todolist = () => {
   const [mode, setMode] = useState(false)
 
   const getData = async () => {
-    const res = await axios.get('http://localhost:3000/posts')
+    const res = await axios.get('http://13.209.40.215/posts')
     setTodolist(res.data)
   }
 
@@ -28,7 +28,7 @@ const Todolist = () => {
       isDone: false
     }
 
-    await axios.post('http://localhost:3000/posts', data)
+    await axios.post('http://13.209.40.215/posts', data)
 
     setValue('')
     setTodolist((prev) => [...prev, data])
@@ -86,7 +86,7 @@ const TodolistContainer = styled.div`
   > svg {
     position: sticky;
     bottom: 16px;
-    left: calc(550px - 16px);
+    left: calc(550px - 32px);
     cursor: pointer;
   }
 `
@@ -95,7 +95,9 @@ const TodoList = styled.div`
   padding: 0 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 140px;
   gap: 20px;
+  min-height: 700px;
 `
 
 const CreateTodo = styled.div`
